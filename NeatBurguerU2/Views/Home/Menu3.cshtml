@@ -1,0 +1,28 @@
+﻿@model NeatBurguerU2.Models.ViewModels.Menu3VM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+
+    Layout = "Layout";
+}
+
+<section class="menu3">
+
+    <div>
+        <h1>NUESTRO MENÚ</h1>
+        @foreach (var h in Model.Menus)
+    {
+        <h2 class="seleccionado">
+
+            <a href="~/menu3/@h.Nombre.Replace(" ","-")"><span>@h.Nombre</span> <span class="price">@h.Precio</span></a>
+
+        </h2>
+
+    }
+
+    </div>
+    <div>
+        <img style="width:100%" src="~/images/@(Model.IdBurger).jpg" />
+        <p>@Model.Descripcion</p>
+    </div>
+
+</section>

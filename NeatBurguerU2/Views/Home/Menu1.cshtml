@@ -1,0 +1,34 @@
+﻿@model NeatBurguerU2.Models.ViewModels.Menu1VM
+@{
+
+    Layout = "Layout";
+}
+
+<section class="menu1">
+    <img src="~/images/@(Model.Id).jpg" />
+    <div class="datos">
+        <h3>$ @Model.Precio</h3>
+        <h2>@Model.Nombre</h2>
+        <p>@Model.Descripción</p>
+    </div>
+    <span>
+
+
+        @{
+            if (Model.Anterior != 0)
+            {
+                <a href="~/menu1/@(Model.Anterior)">&lt;</a>
+            }
+        }
+
+        @{
+            if (Model.Siguiente != 0)
+            {
+                <a href="~/menu1/@(Model.Siguiente)">&gt;</a>
+            }
+        }
+
+
+    </span>
+
+
